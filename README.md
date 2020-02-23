@@ -1,7 +1,31 @@
 # vue-3d-box
 
-### vue组建,使用css3 transform3d 实现盒子效果
-![](eg.png)   
+## feature
+* a css3 3d box for vue component
+* coustom the rotate angle
+* support the material
+![](eg.png)
+
+## usage
+
+```js
+// import as a component
+import box from './components/box.vue'
+// use it and transport the config
+<box 
+      :boxX="boxX"
+      :boxY="boxY"
+      :boxZ="boxZ"
+      :rotateX="rotateX"
+      :rotateY="rotateY"
+      :rotateZ="rotateZ"
+      :translateY="translateY"
+      :imgX="imgX"
+      :imgY="imgY"
+      :imgZ="imgZ"
+    />
+```
+
 ## Project setup
 ```
 yarn install
@@ -11,21 +35,3 @@ yarn install
 ```
 yarn run serve
 ```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

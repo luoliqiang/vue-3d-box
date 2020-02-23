@@ -5,19 +5,24 @@
     @mousemove="mousemoveHandler"
   >
     <box 
-      :boxX="100"
-      :boxY="100"
-      :boxZ="100"
+      :boxX="boxX"
+      :boxY="boxY"
+      :boxZ="boxZ"
       :rotateX="rotateX"
       :rotateY="rotateY"
       :rotateZ="rotateZ"
       :translateY="translateY"
+      :imgX="imgX"
+      :imgY="imgY"
+      :imgZ="imgZ"
     />
     <div class="setting">
+      <p style="color: #999;">鼠标拖动页面旋转盒子角度</p>
       <div class="btn">rotateX: <input type="text" v-model="rotateX" /></div>
       <div class="btn">rotateY: <input type="text" v-model="rotateY" /></div>
       <div class="btn">rotateZ: <input type="text" v-model="rotateZ" /></div>
       <div class="btn">translateY: <input type="text" v-model="translateY" /></div>
+      <div class="btn btn-scan" @click="addScan">{{ imgX ? '取消皮肤' : '添加皮肤' }}</div>
     </div>
   </div>
 </template>
@@ -32,6 +37,12 @@ export default {
   },
   data () {
     return {
+      boxX: 100,
+      boxY: 100,
+      boxZ: 100,
+      imgX: '',
+      imgY: '',
+      imgZ: '',
       rotateX: -10,
       rotateY: -15,
       rotateZ: 0,
@@ -40,6 +51,15 @@ export default {
     }
   },
   methods: {
+    addScan () {
+      if (!this.imgX) {
+        this.imgX = '/img1.png'
+        this.imgY = '/img2.png'
+        this.imgZ = '/img2.png'
+      } else {
+        this.imgX = this.imgY = this.imgZ = ''
+      }
+    },
     mousedownHandler (e) {
       this.pageXstart = e.pageX
       this.pageYstart = e.pageY
@@ -64,7 +84,15 @@ export default {
   .btn {
     display: block;
     margin-bottom: 10px;
-    
+  }
+  .btn-scan {
+    margin: 0 auto;
+    width: 80px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    background: #eee;
+    cursor: pointer;
   }
 }
 /deep/ .box {

@@ -20,10 +20,10 @@
         <div class="open"></div>
       </div>
       <div class="item bottom" :style="{backgroundImage: 'url(' + imgY +')'}"></div>
-      <div class="item front" :style="{backgroundImage: 'url(' + imgY +')'}"></div>
-      <div class="item back" :style="{backgroundImage: 'url(' + imgY +')'}"></div>
-      <div class="item right" :style="{backgroundImage: 'url(' + imgY +')'}"></div>
-      <div class="item left" :style="{backgroundImage: 'url(' + imgY +')'}"></div>
+      <div class="item front" :style="{backgroundImage: 'url(' + imgX +')'}"></div>
+      <div class="item back" :style="{backgroundImage: 'url(' + imgX +')'}"></div>
+      <div class="item right" :style="{backgroundImage: 'url(' + imgZ +')'}"></div>
+      <div class="item left" :style="{backgroundImage: 'url(' + imgZ +')'}"></div>
       <slot></slot>
     </div>
   </div>
